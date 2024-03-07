@@ -1,6 +1,7 @@
 #ifndef LISTACLIENTES_H_
 #define LISTACLIENTES_H_
 #include "cliente.h"
+#include <stdlib.h>
 typedef struct listaClientes{
 	Cliente * aClientes;
 	int tam;

@@ -27,14 +27,13 @@ void volcarFicheroAListaClientes(ListaClientes *lc, char *nombfich){
 		fscanf(pf,"%d", &lc->tam);
 		lc->aClientes = (Cliente*)malloc(lc->tam * sizeof(Cliente));
 		lc->numC=0;
-		while(fscanf(pf, "%s %s %s %s %s %s %s", cliente.nombre, cliente.apellidos, cliente.dni,
+		while(fscanf(pf, "%s %s %s %s %s %s %s", cliente.nombre, cliente.apellido, cliente.dni,
 				cliente.telefono, cliente.email, cliente.direccion, cliente.contrasenia)!=EOF){
 			lc->aClientes[lc->numC]=cliente;
 			lc->numC++;
 		}
 		fclose(pf);
 	}
-	fclose(pf);
 }
 
 void aniadirCliente(ListaClientes *lc, Cliente cliente){
@@ -45,13 +44,14 @@ void aniadirCliente(ListaClientes *lc, Cliente cliente){
 	}else{
 		printf("El usuario no ha podido ser registrado\n");
 	}
+	fflush(stdout);
 }
 
 void aniadirClienteAlFinalDelFichero(Cliente c, char *nomfich){
 	FILE *pf;
 	pf=fopen(nomfich,"a");
 	if(pf!=(FILE*)NULL){
-		fprintf(pf, "%s %s %s %s %s %s %s", c.nombre, c.apellidos, c.dni, c.telefono, c.email, c.direccion,c.contrasenia);
+		fprintf(pf, "%s %s %s %s %s %s %s\n", c.nombre, c.apellido, c.dni, c.telefono, c.email, c.direccion,c.contrasenia);
 		fclose(pf);
 	}
 }

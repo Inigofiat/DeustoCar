@@ -12,7 +12,7 @@ Cliente pedirCliente(){
 	printf("Introduce tus apellidos: ");
 	fflush(stdout);
 	fflush(stdin);
-	gets(cliente.apellidos);
+	gets(cliente.apellido);
 
 	printf("Introduce tu dni: ");
 	fflush(stdout);
