@@ -5,7 +5,7 @@
 
 int main() {
     ListaClientes lc;
-    Cliente cliente;
+    Cliente cliente,clienteIniciado;
     int pos;
     char opcion, opcionCliente;
 
@@ -39,6 +39,11 @@ int main() {
                             		printf("----------------------------------------------------------------------------------"
                             					"-------------------------------------------------------\n");
 									fflush(stdout);
+									clienteIniciado = lc.aClientes[pos];
+									mostrarCliente(clienteIniciado);
+									printf("----------------------------------------------------------------------------------"
+									            "-------------------------------------------------------\n");
+																		fflush(stdout);
                             	}
                             }
                             break;

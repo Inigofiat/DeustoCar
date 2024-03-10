@@ -63,6 +63,16 @@ void iniciarSesion(char *email, char*con){
 	gets(con);
 }
 
+void mostrarCliente(Cliente c) {
+    printf("Nombre: %s\n", c.nombre);
+    printf("Apellido: %s\n", c.apellido);
+    printf("DNI: %s\n", c.dni);
+    printf("Teléfono: %s\n", c.telefono);
+    printf("Email: %s\n", c.email);
+    printf("Dirección: %s\n", c.direccion);
+    printf("Contraseña: %s\n", c.contrasenia);
+    fflush(stdout);
+}
 //int emailCorrecto(char *emailC, char *email){
 //	int correoCorrecto = 0;
 //	if(strcmp(emailC, email)==0){

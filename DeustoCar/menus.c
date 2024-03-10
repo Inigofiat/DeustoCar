@@ -25,6 +25,10 @@ char menuInicioSesionCliente(){
 	fflush(stdout);
 	fflush(stdin);
 	scanf("%c", &opcion);
+	printf("----------------------------------------------------------------------------------"
+				"-------------------------------------------------------\n");
+	fflush(stdout);
+	fflush(stdin);
 	return opcion;
 }
 
