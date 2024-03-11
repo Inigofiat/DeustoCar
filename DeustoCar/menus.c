@@ -68,4 +68,20 @@ char menuAdministrador(){
 	return opcion;
 }
 
-
+char menuCatalogo(){
+	char opcion;
+	printf("1. Ver todo el catalogo\n");
+	printf("2. Filtrar por AÑO\n");
+	printf("3. Filtrar por MARCA\n");
+	printf("4. Filtrar por CV\n");
+	printf("0. Cerrar Sesión\n");
+	printf("Selecciones una opción");
+	fflush(stdout);
+	fflush(stdin);
+	scanf("%s", &opcion);
+	printf("----------------------------------------------------------------------------------"
+			"-------------------------------------------------------\n");
+	fflush(stdout);
+	fflush(stdin);
+	return opcion;
+}
