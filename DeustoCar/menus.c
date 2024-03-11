@@ -74,7 +74,7 @@ char menuCatalogo(){
 	printf("2. Filtrar por AÑO\n");
 	printf("3. Filtrar por MARCA\n");
 	printf("4. Filtrar por CV\n");
-	printf("5. Filtrar por precio\n");
+	printf("5. Filtrar por PRECIO\n");
 	printf("0. Cerrar Sesión\n");
 	printf("Seleccione una opción: ");
 	fflush(stdout);
