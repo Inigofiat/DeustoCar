@@ -39,13 +39,10 @@ void filtrarPorAnio(ListaCoches lco) {
     char anio[5];
     int pos = 0;
     int encontrado = 0;
-
     printf("Introduce el año del coche: ");
     fflush(stdout);
     fflush(stdin);
-
     gets(anio);
-
     while (pos < lco.numC) {
         if (strcmp(lco.aCoches[pos].anio, anio) == 0) {
             mostrarCoche(lco.aCoches[pos]);
@@ -54,28 +51,85 @@ void filtrarPorAnio(ListaCoches lco) {
         }
         pos++;
     }
-
     if (!encontrado) {
         printf("No se encontraron coches para el año especificado.\n");
         fflush(stdout);
     }
 }
 
-//char filtrarPorAnio (ListaCoches lco, char *anio){
-//	Coche coche;
-//	char finalizado = "Ya se ha filtrado";
-//	int pos=0;
-//	printf("Introduce el año del coche: ");
-//	fflush(stdout);
-//	fflush(stdin);
-//	anio = gets(coche.anio);
-//	if(strcmp(lco.aCoches[pos].anio,anio)==0){
-//		mostrarCoche(coche);
-//		fflush(stdout);
-//		pos++;
-//	}else{
-//		pos++;
-//	}
-//	return finalizado;
-//}
+void filtrarPorMarca(ListaCoches lco) {
+    char marca[30];
+    int pos = 0;
+    int encontrado = 0;
+    printf("Introduce la marca del coche: ");
+    fflush(stdout);
+    fflush(stdin);
+    gets(marca);
+    while (pos < lco.numC) {
+        if (strcmp(lco.aCoches[pos].marca, marca) == 0) {
+            mostrarCoche(lco.aCoches[pos]);
+            fflush(stdout);
+            encontrado = 1;
+        }
+        pos++;
+    }
+
+    if (!encontrado) {
+        printf("No se encontraron coches para la marca especificada.\n");
+        fflush(stdout);
+    }
+}
+
+void filtrarPorCV(ListaCoches lco) {
+    char cvMin[5], cvMax[5];
+    int pos = 0;
+    int encontrado = 0;
+    printf("Introduce el valor mínimo de potencia (CV) del coche: ");
+    fflush(stdout);
+    fflush(stdin);
+    gets(cvMin);
+    printf("Introduce el valor máximo de potencia (CV) del coche: ");
+    fflush(stdout);
+    fflush(stdin);
+    gets(cvMax);
+    while (pos < lco.numC) {
+        if (strcmp(lco.aCoches[pos].cv, cvMin) >= 0 && strcmp(lco.aCoches[pos].cv, cvMax) <= 0) {
+            mostrarCoche(lco.aCoches[pos]);
+            fflush(stdout);
+            encontrado = 1;
+        }
+        pos++;
+    }
+    if (!encontrado) {
+        printf("No se encontraron coches para el intervalo de potencia especificado.\n");
+        fflush(stdout);
+    }
+}
+
+void filtrarPorPrecio(ListaCoches lco) {
+    char precioMin[10], precioMax[10];
+    int pos = 0;
+    int encontrado = 0;
+    printf("Introduce el valor mínimo de precio del coche: ");
+    fflush(stdout);
+    fflush(stdin);
+    gets(precioMin);
+    printf("Introduce el valor máximo de precio del coche: ");
+    fflush(stdout);
+    fflush(stdin);
+    gets(precioMax);
+    while (pos < lco.numC) {
+        if (strcmp(lco.aCoches[pos].precio, precioMin) >= 0 && strcmp(lco.aCoches[pos].precio,precioMax) <= 0) {
+            mostrarCoche(lco.aCoches[pos]);
+            fflush(stdout);
+            encontrado = 1;
+        }
+        pos++;
+    }
+    if (!encontrado) {
+        printf("No se encontraron coches para el intervalo de precio especificado.\n");
+        fflush(stdout);
+    }
+}
+
 

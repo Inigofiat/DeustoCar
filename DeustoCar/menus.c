@@ -18,8 +18,8 @@ char menuPrincipal(){
 
 char menuInicioSesionCliente(){
 	char opcion;
-	printf("1.Iniciar sesión\n");
-	printf("2.Registrarse\n");
+	printf("1. Iniciar sesión\n");
+	printf("2. Registrarse\n");
 	printf("0. Volver al menú principal\n");
 	printf("Seleccione una opción: ");
 	fflush(stdout);
@@ -70,10 +70,11 @@ char menuAdministrador(){
 
 char menuCatalogo(){
 	char opcion;
-	printf("1. Ver todo el catalogo\n");
+	printf("1. Ver todo el catálogo\n");
 	printf("2. Filtrar por AÑO\n");
 	printf("3. Filtrar por MARCA\n");
 	printf("4. Filtrar por CV\n");
+	printf("5. Filtrar por precio\n");
 	printf("0. Cerrar Sesión\n");
 	printf("Seleccione una opción: ");
 	fflush(stdout);
