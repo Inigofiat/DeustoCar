@@ -38,7 +38,7 @@ char menuCliente(){
 	printf("2. Catalogo\n");
 	printf("3. Comprar\n");
 	printf("4. Vender\n");
-	printf("0. Cerrar sesion\n");
+	printf("0. Cerrar sesión\n");
 	printf("Seleccione una opción: ");
 	fflush(stdout);
 	fflush(stdin);
@@ -75,7 +75,7 @@ char menuCatalogo(){
 	printf("3. Filtrar por MARCA\n");
 	printf("4. Filtrar por CV\n");
 	printf("0. Cerrar Sesión\n");
-	printf("Selecciones una opción");
+	printf("Seleccione una opción: ");
 	fflush(stdout);
 	fflush(stdin);
 	scanf("%s", &opcion);
