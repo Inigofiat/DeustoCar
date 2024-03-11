@@ -1,9 +1,9 @@
 #include <stdio.h>
 char menuPrincipal(){
 	char opcion;
-	printf("1.Área administrador\n");
-	printf("2.Área cliente\n");
-	printf("0.Cerrar programa\n");
+	printf("1. Área administrador\n");
+	printf("2. Área cliente\n");
+	printf("0. Cerrar programa\n");
 	printf("Seleccione una opción: ");
 	fflush(stdout);
 	fflush(stdin);
