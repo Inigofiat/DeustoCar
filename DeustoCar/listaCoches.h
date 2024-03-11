@@ -9,7 +9,9 @@ typedef struct listaCoches{
 }ListaCoches;
 
 void volcarFicheroAListaCoches (ListaCoches *lco, char *nombfich);
-int filtrarPorAnio(ListaCoches lco, Coche co);
+//char* filtrarPorAnio(ListaCoches lco, char*anio);
+void filtrarPorAnio(ListaCoches lco);
+
 int filtrarPorMarca(ListaCoches lco, Coche co);
 int filtrarPorCV(ListaCoches lco, Coche co);
 void volcarListaCochesAFichero(ListaCoches lco, char *nombfich);

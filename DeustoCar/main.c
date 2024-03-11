@@ -21,9 +21,8 @@ int main() {
         opcion = menuPrincipal();
         switch (opcion) {
             case '0':
-                printf("El programa se ha cerrado\n");
-                fflush(stdout);
-
+//                printf("El programa se ha cerrado\n");
+//                fflush(stdout);
                 break;
             case '1':
                 printf("El área de administrador se hará en C++\n");
@@ -63,7 +62,14 @@ int main() {
 															visualizaListaCoches(lCoches);
 															printf("----------------------------------------------------------------------------------"
 																			"-------------------------------------------------------\n");
-															                        		fflush(stdout);
+															fflush(stdout);
+															break;
+														case '2':
+															filtrarPorAnio(lCoches);
+															printf("----------------------------------------------------------------------------------"
+																																		"-------------------------------------------------------\n");
+															fflush(stdout);
+															break;
 													}
 													break;
 												}while(opcionCliente!=0);

@@ -34,6 +34,33 @@ void visualizaListaCoches(ListaCoches lCoches){
 	}
 }
 
+
+void filtrarPorAnio(ListaCoches lco) {
+    char anio[5];
+    int pos = 0;
+    int encontrado = 0;
+
+    printf("Introduce el año del coche: ");
+    fflush(stdout);
+    fflush(stdin);
+
+    gets(anio);
+
+    while (pos < lco.numC) {
+        if (strcmp(lco.aCoches[pos].anio, anio) == 0) {
+            mostrarCoche(lco.aCoches[pos]);
+            fflush(stdout);
+            encontrado = 1;
+        }
+        pos++;
+    }
+
+    if (!encontrado) {
+        printf("No se encontraron coches para el año especificado.\n");
+        fflush(stdout);
+    }
+}
+
 //char filtrarPorAnio (ListaCoches lco, char *anio){
 //	Coche coche;
 //	char finalizado = "Ya se ha filtrado";
@@ -43,7 +70,7 @@ void visualizaListaCoches(ListaCoches lCoches){
 //	fflush(stdin);
 //	anio = gets(coche.anio);
 //	if(strcmp(lco.aCoches[pos].anio,anio)==0){
-//		printf(coche);
+//		mostrarCoche(coche);
 //		fflush(stdout);
 //		pos++;
 //	}else{
