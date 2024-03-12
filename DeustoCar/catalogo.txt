@@ -1,80 +1,80 @@
 100
-1971 Fiat 124-Sport-Spider 20000 118
-1972 Fiat 126 18000 24
-1973 Mercedes-Benz W116 35000 225
-1974 Volkswagen Passat 20000 85
-1975 Ford Granada 18000 135
-1976 Volkswagen Golf-Mk1 22000 110
-1977 Seat 1200-Sport 19000 85
-1978 Seat 131 17000 86
-1978 BMW 7-Series 30000 218
-1979 BMW 3-Series 25000 143
-1980 Fiat Uno 16000 65
-1980 Ford Escort 22000 110
-1981 Porsche 924 30000 125
-1981 Porsche 944 35000 163
-1983 Mercedes-Benz 190E 28000 122
-1983 Mercedes-Benz 200 29000 136
-1985 Audi 80 23000 100
-1985 Audi 100 26000 140
-1987 Hyundai Excel 15000 68
-1987 Hyundai Stellar 16000 90
-1988 Ford Fiesta 19000 75
-1989 Seat Toledo 20000 115
-1990 Volkswagen Passat 22000 115
-1990 Fiat Tipo 22000 110
-1991 Seat Ibiza 17000 100
-1992 Fiat Punto 20000 85
-1992 Volkswagen Golf-Mk3 23000 115
-1993 Ford Mondeo 25000 125
-1994 BMW 3-Series 28000 170
-1995 Audi A4 30000 150
-1995 BMW 8-Series 70000 300
-1996 Mercedes-Benz C_Class 32000 170
-1996 Mercedes-Benz S_Class 80000 335
-1998 Hyundai Accent 18000 92
-1998 Audi A8 60000 280
-1999 Ford Focus 24000 130
-1999 Hyundai Sonata 28000 170
-2000 Volkswagen Golf-Mk4 25000 150
-2000 Seat Cordoba 19000 90
-2001 Seat Leon 22000 150
-2002 Porsche Cayman 45000 275
-2003 Porsche Cayenne 50000 250
-2004 Audi A3 28000 200
-2004 Fiat Multipla 22000 90
-2005 Mercedes-Benz E_Class 40000 224
-2005 BMW 6-Series 60000 367
-2006 Mercedes-Benz CLS_Class 50000 302
-2007 Fiat 500 20000 100
-2008 Hyundai i30 25000 140
-2008 Audi Q7 70000 350
-2009 BMW 1-Series 30000 220
-2009 Volkswagen Scirocco 40000 240
-2010 Volkswagen Polo-Mk5 23000 110
-2010 Seat Exeo 25000 200
-2011 Seat Alhambra 35000 200
-2011 Ford C_Max 30000 170
-2012 Ford Fiesta 24000 120
-2012 Fiat 500L 22000 100
-2013 Audi A6 45000 310
-2013 BMW 4-Series 55000 302
-2014 Mercedes-Benz S_Class 80000 455
-2015 Mercedes-Benz GLA_Class 35000 208
-2016 Hyundai Tucson 30000 180
-2016 Audi A5 50000 354
-2017 Porsche 911 90000 370
-2018 BMW 5-Series 60000 340
-2018 Hyundai Kona 30000 175
-2019 Volkswagen Arteon 45000 268
-2019 Volkswagen T-Cross 35000 150
-2020 Seat Arona 28000 150
-2020 Seat Leon 35000 240
-2021 Audi Q5 55000 300
-2021 Porsche Taycan 120000 400
-2022 Ford Mustang 50000 450
-2022 BMW 2-Series 45000 302
-2023 Mercedes-Benz GLE_Class 70000 400
-2023 Mercedes-Benz A_Class 40000 250
-2024 Hyundai Elantra 30000 190
-2024 Audi E_Tron-GT 110000 590
+1971 Fiat 124-Sport-Spider 20000 118 Rojo Seminuevo ABC-1234
+1972 Fiat 126 18000 24 Azul Nuevo DEF-5678
+1973 Mercedes-Benz W116 35000 225 Plateado Seminuevo GHI-91011
+1974 Volkswagen Passat 20000 85 Negro Seminuevo JKL-1213
+1975 Ford Granada 18000 135 Blanco Nuevo MNO-1415
+1976 Volkswagen Golf-Mk1 22000 110 Gris Seminuevo PQR-1617
+1977 Seat 1200-Sport 19000 85 Rojo Nuevo STU-1819
+1978 Seat 131 17000 86 Verde Seminuevo VWX-2021
+1978 BMW 7-Series 30000 218 Azul Seminuevo YZA-2223
+1979 BMW 3-Series 25000 143 Plateado Nuevo BCD-2425
+1980 Fiat Uno 16000 65 Amarillo Nuevo EFG-2627
+1980 Ford Escort 22000 110 Blanco Seminuevo HIJ-2829
+1981 Porsche 924 30000 125 Rojo Seminuevo KLM-3031
+1981 Porsche 944 35000 163 Azul Nuevo NOP-3233
+1983 Mercedes-Benz 190E 28000 122 Plateado Seminuevo QRS-3435
+1983 Mercedes-Benz 200 29000 136 Negro Nuevo TUV-3637
+1985 Audi 80 23000 100 Gris Seminuevo WXY-3839
+1985 Audi 100 26000 140 Blanco Nuevo YZA-4041
+1987 Hyundai Excel 15000 68 Verde Seminuevo BCD-4243
+1987 Hyundai Stellar 16000 90 Azul Nuevo DEF-4445
+1988 Ford Fiesta 19000 75 Rojo Seminuevo GHI-4647
+1989 Seat Toledo 20000 115 Negro Nuevo JKL-4849
+1990 Volkswagen Passat 22000 115 Plateado Seminuevo MNO-5051
+1990 Fiat Tipo 22000 110 Blanco Nuevo PQR-5253
+1991 Seat Ibiza 17000 100 Gris Seminuevo STU-5455
+1992 Fiat Punto 20000 85 Rojo Nuevo VWX-5657
+1992 Volkswagen Golf-Mk3 23000 115 Azul Seminuevo YZA-5859
+1993 Ford Mondeo 25000 125 Plateado Nuevo BCD-6061
+1994 BMW 3-Series 28000 170 Negro Seminuevo EFG-6263
+1995 Audi A4 30000 150 Blanco Nuevo HIJ-6465
+1995 BMW 8-Series 70000 300 Gris Seminuevo KLM-6667
+1996 Mercedes-Benz C_Class 32000 170 Plateado Nuevo NOP-6869
+1996 Mercedes-Benz S_Class 80000 335 Negro Seminuevo QRS-7071
+1998 Hyundai Accent 18000 92 Rojo Nuevo TUV-7273
+1998 Audi A8 60000 280 Azul Seminuevo WXY-7475
+1999 Ford Focus 24000 130 Verde Nuevo BCD-7677
+1999 Hyundai Sonata 28000 170 Plateado Seminuevo DEF-7879
+2000 Volkswagen Golf-Mk4 25000 150 Negro Nuevo GHI-8081
+2000 Seat Cordoba 19000 90 Gris Seminuevo HIJ-8283
+2001 Seat Leon 22000 150 Rojo Nuevo KLM-8485
+2002 Porsche Cayman 45000 275 Azul Seminuevo NOP-8687
+2003 Porsche Cayenne 50000 250 Plateado Nuevo QRS-8889
+2004 Audi A3 28000 200 Negro Seminuevo TUV-9091
+2004 Fiat Multipla 22000 90 Blanco Nuevo VWX-9293
+2005 Mercedes-Benz E_Class 40000 224 Rojo Seminuevo YZA-9495
+2005 BMW 6-Series 60000 367 Azul Nuevo BCD-9697
+2006 Mercedes-Benz CLS_Class 50000 302 Plateado Seminuevo DEF-9899
+2007 Fiat 500 20000 100 Verde Nuevo GHI-0001
+2008 Hyundai i30 25000 140 Negro Seminuevo JKL-0203
+2008 Audi Q7 70000 350 Blanco Nuevo MNO-0405
+2009 BMW 1-Series 30000 220 Gris Seminuevo PQR-0607
+2009 Volkswagen Scirocco 40000 240 Rojo Nuevo STU-0809
+2010 Volkswagen Polo-Mk5 23000 110 Plateado Seminuevo VWX-1011
+2010 Seat Exeo 25000 200 Azul Nuevo YZA-1213
+2011 Seat Alhambra 35000 200 Negro Seminuevo BCD-1415
+2011 Ford C_Max 30000 170 Blanco Nuevo DEF-1617
+2012 Ford Fiesta 24000 120 Rojo Seminuevo GHI-1819
+2012 Fiat 500L 22000 100 Verde Nuevo JKL-2021
+2013 Audi A6 45000 310 Gris Seminuevo MNO-2223
+2013 BMW 4-Series 55000 302 Plateado Nuevo PQR-2425
+2014 Mercedes-Benz S_Class 80000 455 Negro Seminuevo STU-2627
+2015 Mercedes-Benz GLA_Class 35000 208 Blanco Nuevo VWX-2829
+2016 Hyundai Tucson 30000 180 Rojo Seminuevo YZA-3031
+2016 Audi A5 50000 354 Azul Nuevo BCD-3233
+2017 Porsche 911 90000 370 Plateado Seminuevo DEF-3435
+2018 BMW 5-Series 60000 340 Negro Nuevo GHI-3637
+2018 Hyundai Kona 30000 175 Verde Seminuevo HIJ-3839
+2019 Volkswagen Arteon 45000 268 Rojo Nuevo KLM-4041
+2019 Volkswagen T-Cross 35000 150 Azul Seminuevo NOP-4243
+2020 Seat Arona 28000 150 Plateado Nuevo QRS-4445
+2020 Seat Leon 35000 240 Blanco Seminuevo STU-4647
+2021 Audi Q5 55000 300 Gris Nuevo VWX-4849
+2021 Porsche Taycan 120000 400 Negro Seminuevo YZA-5051
+2022 Ford Mustang 50000 450 Rojo Nuevo BCD-5253
+2022 BMW 2-Series 45000 302 Verde Seminuevo DEF-5455
+2023 Mercedes-Benz GLE_Class 70000 400 Azul Nuevo GHI-5657
+2023 Mercedes-Benz A_Class 40000 290 Negro Seminuevo JKL-6893
+2024 Hyundai Elantra 30000 190 Amarillo Nuevo MNO-2373
+2024 Audi E_Tron-GT 110000 590 Gris Seminuevo PQR-5620
