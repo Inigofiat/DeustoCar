@@ -94,6 +94,7 @@ int main() {
                                                 } while (opcionCliente != '0');
                                                 break;
                                             case'3':
+                                            	break;
 
                                         }
                                     } while (opcionCliente != '0');
