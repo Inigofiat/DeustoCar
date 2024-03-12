@@ -13,6 +13,8 @@ void filtrarPorAnio(ListaCoches lco);
 void filtrarPorMarca(ListaCoches lco);
 void filtrarPorCV(ListaCoches lco);
 void filtrarPorPrecio(ListaCoches lco);
+void filtrarPorColor(ListaCoches lco);
+void filtrarPorEstado(ListaCoches lco);
 void volcarListaCochesAFichero(ListaCoches lco, char *nombfich);
 void visualizarListaCoches(ListaCoches lCoches);
 

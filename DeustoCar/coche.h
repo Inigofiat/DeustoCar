@@ -6,8 +6,9 @@ typedef struct coche{
 	char modelo[50];
 	char precio[10];
 	char cv[5];
-	char estado[10];
+	char estado[15];
 	char color[30];
+	char matricula[20];
 }Coche;
 void mostrarCoche(Coche co);
 #endif /* COCHE_H_ */

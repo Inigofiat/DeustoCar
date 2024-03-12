@@ -12,7 +12,7 @@ void volcarFicheroAListaCoches(ListaCoches *lco, char *nombfich){
 		fscanf(pf,"%d", &lco->tam);
 		lco->aCoches = (Coche*)malloc(lco->tam * sizeof(Coche));
 		lco->numC=0;
-		while(fscanf(pf, "%s %s %s %s %s", coche.anio, coche.marca, coche.modelo, coche.precio, coche.cv) != EOF) {
+		while(fscanf(pf, "%s %s %s %s %s %s %s %s", coche.anio, coche.marca, coche.modelo, coche.precio, coche.cv, coche.color, coche.estado, coche.matricula) != EOF) {
 		    lco->aCoches[lco->numC] = coche;
 		    lco->numC++;
 		}
@@ -26,7 +26,7 @@ void volcarFicheroAListaCoches(ListaCoches *lco, char *nombfich){
 void visualizaListaCoches(ListaCoches lCoches){
 	int i;
 	Coche coche;
-	printf("%22s%22s%24s%22s%22s\n", "AÑO", "MARCA", "MODELO", "PRECIO", "POTENCIA(CV)");
+	printf("%22s%22s%24s%22s%22s%22s%22s%22s\n", "AÑO", "MARCA", "MODELO", "PRECIO", "POTENCIA(CV)", "COLOR", "ESTADO", "MATRÍCULA");
 	fflush(stdout);
 	for (i = 0; i < lCoches.numC; i++) {
 		coche = lCoches.aCoches[i];
@@ -76,6 +76,53 @@ void filtrarPorMarca(ListaCoches lco) {
 
     if (!encontrado) {
         printf("No se encontraron coches para la marca especificada.\n");
+        fflush(stdout);
+    }
+}
+
+void filtrarPorColor(ListaCoches lco) {
+    char color[30];
+    int pos = 0;
+    int encontrado = 0;
+    printf("Introduce el color del coche: ");
+    fflush(stdout);
+    fflush(stdin);
+    gets(color);
+    while (pos < lco.numC) {
+        if (strcmp(lco.aCoches[pos].color, color) == 0) {
+            mostrarCoche(lco.aCoches[pos]);
+            fflush(stdout);
+            encontrado = 1;
+        }
+        pos++;
+    }
+
+    if (!encontrado) {
+        printf("No se encontraron coches para el color especificado.\n");
+        fflush(stdout);
+    }
+}
+
+void filtrarPorEstado(ListaCoches lco) {
+    char estado[30];
+    int pos = 0;
+    int encontrado = 0;
+    printf("Los estados disponibles son: Nuevo o Seminuevo\n");
+    printf("Introduce el color del coche: ");
+    fflush(stdout);
+    fflush(stdin);
+    gets(estado);
+    while (pos < lco.numC) {
+        if (strcmp(lco.aCoches[pos].estado, estado) == 0) {
+            mostrarCoche(lco.aCoches[pos]);
+            fflush(stdout);
+            encontrado = 1;
+        }
+        pos++;
+    }
+
+    if (!encontrado) {
+        printf("No se encontraron coches para el estado especificado.\n");
         fflush(stdout);
     }
 }
