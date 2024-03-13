@@ -208,12 +208,12 @@ void filtrarCocheCompra(ListaCoches lco){
         printf("No se encontró ningún coche con esa matrícula.\n");
         fflush(stdout);
     } else {
-        char opcionCompra;
+        char opcionCompra[10];
         printf("¿Desea comprar este coche? (Si/No): ");
         fflush(stdout);
         fflush(stdin);
-        scanf("%c", &opcionCompra);
-        if (tolower(opcionCompra) == 's') {
+        scanf("%s", opcionCompra);
+        if (strcmp(opcionCompra, "si") == 0 || strcmp(opcionCompra, "SI") == 0|| strcmp(opcionCompra, "Si") == 0|| strcmp(opcionCompra, "sI") == 0) {
         	comprarCoche(&lco, pos);
             printf("Coche comprado exitosamente.\n");
             fflush(stdout);
