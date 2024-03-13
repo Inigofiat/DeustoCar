@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "coche.h"
+#include <ctype.h>
 
 void volcarFicheroAListaCoches(ListaCoches *lco, char *nombfich){
 	FILE *pf;
@@ -20,7 +21,6 @@ void volcarFicheroAListaCoches(ListaCoches *lco, char *nombfich){
 		fclose(pf);
 	}
 }
-
 
 
 void visualizaListaCoches(ListaCoches lCoches){
@@ -179,4 +179,64 @@ void filtrarPorPrecio(ListaCoches lco) {
     }
 }
 
+void eliminarCocheCompra(ListaCoches *lco, int pos){
+	int i;
+	for (i = 0; i < lco->numC; i++) {
+		lco->aCoches[i]=lco->aCoches[i+1];
+	}
+	lco->numC--;
+}
 
+void filtrarCocheCompra(ListaCoches lco){
+    char matricula[10];
+    int pos = 0;
+    int encontrado = 0;
+    printf("Introduce la matrícula del coche: ");
+    fflush(stdout);
+    fflush(stdin);
+    gets(matricula);
+    while (pos < lco.numC) {
+        if (strcmp(lco.aCoches[pos].matricula, matricula) == 0) {
+            mostrarCoche(lco.aCoches[pos]);
+            encontrado = 1;
+            fflush(stdout);
+            break;
+        }
+        pos++;
+    }
+    if (!encontrado) {
+        printf("No se encontró ningún coche con esa matrícula.\n");
+        fflush(stdout);
+    } else {
+        char opcionCompra;
+        printf("¿Desea comprar este coche? (Si/No): ");
+        fflush(stdout);
+        fflush(stdin);
+        scanf("%c", &opcionCompra);
+        if (tolower(opcionCompra) == 's') {
+        	comprarCoche(&lco, pos);
+            printf("Coche comprado exitosamente.\n");
+            fflush(stdout);
+        } else {
+            printf("Compra cancelada.\n");
+            fflush(stdout);
+        }
+    }
+}
+
+void comprarCoche(ListaCoches *lco, int pos){
+	eliminarCocheCompra(lco, pos);
+}
+
+void volcarListaCochesAFichero(ListaCoches lc, char *nombfich){
+	FILE *pf;
+	int i;
+	pf=fopen(nombfich, "w");
+	if(pf != (FILE*)NULL){
+		fprintf(pf,"%d\n",lc.tam);
+		for(i=0;i<lc.numC;i++){
+			fprintf(pf,"%s %s %s %s %s %s %s %s\n",lc.aCoches[i].anio,lc.aCoches[i].marca,lc.aCoches[i].modelo,lc.aCoches[i].precio, lc.aCoches[i].cv,lc.aCoches[i].color,lc.aCoches[i].estado,lc.aCoches[i].matricula);
+		}
+		fclose(pf);
+	}
+}

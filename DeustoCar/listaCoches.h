@@ -17,5 +17,8 @@ void filtrarPorColor(ListaCoches lco);
 void filtrarPorEstado(ListaCoches lco);
 void volcarListaCochesAFichero(ListaCoches lco, char *nombfich);
 void visualizarListaCoches(ListaCoches lCoches);
+void eliminarCocheCompra(ListaCoches *lco, int pos);
+void filtrarCocheCompra(ListaCoches lco);
+void comprarCoche(ListaCoches *lco, int pos);
 
 #endif /* LISTACOCHES_H_ */

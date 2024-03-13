@@ -106,7 +106,12 @@ int main() {
                                                 } while (opcionCliente != '0');
                                                 break;
                                             case'3':
-                                            	break;
+                                            	filtrarCocheCompra(lCoches);
+												printf("----------------------------------------------------------------------------------"
+													   "-------------------------------------------------------\n");
+												fflush(stdout);
+												volcarListaCochesAFichero(lCoches,NOMBFICHCOCHES);
+												break;
 
                                         }
                                     } while (opcionCliente != '0');

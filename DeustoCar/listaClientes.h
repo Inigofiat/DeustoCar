@@ -10,7 +10,7 @@ typedef struct listaClientes{
 }ListaClientes;
 
 void volcarFicheroAListaClientes(ListaClientes *lc, char *nombfich);
-int buscarCliente(ListaClientes lc, char *dni);
+int buscarCliente(ListaClientes lc, char *email);
 void anadirCliente(ListaClientes *lc, Cliente c);
 void volcarListaClientesAFichero (ListaClientes lc, char *nombfich);
 void aniadirCliente(ListaClientes *lc, Cliente c);
