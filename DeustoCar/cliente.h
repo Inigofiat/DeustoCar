@@ -1,5 +1,6 @@
 #ifndef CLIENTE_H_
 #define CLIENTE_H_
+#include "listaCoches.h"
 typedef struct cliente{
 	char nombre[20];
 	char apellido[20];
@@ -8,10 +9,12 @@ typedef struct cliente{
 	char email[30];
 	char direccion[30];
 	char contrasenia[30];
+	//ListaCoches listaCochesCliente;
 }Cliente;
 Cliente pedirCliente();
 void mostrarCliente(Cliente c);
 int contraseniaCorrecta(char *conC, char *con);
 void iniciarSesion(char *email, char *con);
+
 //int emailCorrecto (char *emailC, char *email);
 #endif /* CLIENTE_H_ */

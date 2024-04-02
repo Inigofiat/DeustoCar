@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "coche.h"
 #include <ctype.h>
-
+#include "cliente.h"
 void volcarFicheroAListaCoches(ListaCoches *lco, char *nombfich){
 	FILE *pf;
 	Coche coche;
@@ -22,16 +22,15 @@ void volcarFicheroAListaCoches(ListaCoches *lco, char *nombfich){
 	}
 }
 
-
 void visualizaListaCoches(ListaCoches lCoches){
-	int i;
-	Coche coche;
-	printf("%22s%22s%24s%22s%22s%22s%22s%22s\n", "AÑO", "MARCA", "MODELO", "PRECIO", "POTENCIA(CV)", "COLOR", "ESTADO", "MATRÍCULA");
-	fflush(stdout);
-	for (i = 0; i < lCoches.numC; i++) {
-		coche = lCoches.aCoches[i];
-		mostrarCoche(coche);
-	}
+    int i;
+    Coche coche;
+    printf("%-20s%-21s%-24s%-21s%-19s%-24s%-24s%-20s\n", "AÑO", "MARCA", "MODELO", "PRECIO", "POTENCIA(CV)", "COLOR", "ESTADO", "MATRÍCULA");
+    fflush(stdout);
+    for (i = 0; i < lCoches.numC; i++) {
+        coche = lCoches.aCoches[i];
+        mostrarCoche(coche);
+    }
 }
 
 
@@ -188,16 +187,21 @@ void eliminarCocheCompra(ListaCoches *lco, int pos){
 }
 
 void filtrarCocheCompra(ListaCoches lco){
-    char matricula[10];
+    char matricula[10], numTarjeta[20];
     int pos = 0;
     int encontrado = 0;
     printf("Introduce la matrícula del coche: ");
     fflush(stdout);
     fflush(stdin);
     gets(matricula);
+
     while (pos < lco.numC) {
         if (strcmp(lco.aCoches[pos].matricula, matricula) == 0) {
             mostrarCoche(lco.aCoches[pos]);
+            printf("Introduce el número de tarjeta: ");
+            fflush(stdout);
+            fflush(stdin);
+            gets(numTarjeta);
             encontrado = 1;
             fflush(stdout);
             break;

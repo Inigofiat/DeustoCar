@@ -1,5 +1,4 @@
 100
-1971 Fiat 124-Sport-Spider 20000 118 Rojo Seminuevo ABC-1234
 1972 Fiat 126 18000 24 Azul Nuevo DEF-5678
 1973 Mercedes-Benz W116 35000 225 Plateado Seminuevo GHI-91011
 1974 Volkswagen Passat 20000 85 Negro Seminuevo JKL-1213
