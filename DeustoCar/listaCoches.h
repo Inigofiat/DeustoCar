@@ -2,7 +2,7 @@
 #define LISTACOCHES_H_
 #include "coche.h"
 #include <stdlib.h>
-#include "cliente.h"
+
 typedef struct listaCoches{
 	Coche * aCoches;
 	int tam;
@@ -19,7 +19,7 @@ void filtrarPorEstado(ListaCoches lco);
 void volcarListaCochesAFichero(ListaCoches lco, char *nombfich);
 void visualizarListaCoches(ListaCoches lCoches);
 void eliminarCocheCompra(ListaCoches *lco, int pos);
-void filtrarCocheCompra(ListaCoches lco/*, Cliente*c*/);
-void comprarCoche(ListaCoches *lco, int pos/*, Cliente *cliente*/);
+void filtrarCocheCompra(ListaCoches lco);
+void comprarCoche(ListaCoches *lco, int pos);
 
 #endif /* LISTACOCHES_H_ */

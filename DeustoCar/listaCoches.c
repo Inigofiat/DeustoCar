@@ -22,7 +22,7 @@ void volcarFicheroAListaCoches(ListaCoches *lco, char *nombfich){
 	}
 }
 
-void visualizaListaCoches(ListaCoches lCoches){
+void visualizarListaCoches(ListaCoches lCoches){
     int i;
     Coche coche;
     printf("%-20s%-21s%-24s%-21s%-19s%-24s%-24s%-20s\n", "AÑO", "MARCA", "MODELO", "PRECIO", "POTENCIA(CV)", "COLOR", "ESTADO", "MATRÍCULA");
