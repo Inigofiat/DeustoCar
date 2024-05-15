@@ -274,7 +274,8 @@ int main() {
 											fflush(stdout);
 											break;
 										case '5':
-											char *precioMin, *precioMax;
+											char *precioMin;
+											char *precioMax;
 											printf("Introduce el valor mínimo de precio del coche: ");
 											fflush(stdout);
 											fflush(stdin);
@@ -311,7 +312,21 @@ int main() {
 									} while (opcionCliente3 != '0');
 									break;
 								case '3':
-									filtrarCocheCompra(lCoches);
+									char* matricula
+									char* opcionCompra;
+									printf("Introduce la matrícula del coche: ");
+									fflush(stdout);
+									fflush(stdin);
+									gets(matricula);
+									sprintf(sendBuff,"%c",matricula);
+									send(s, sendBuff, sizeof(sendBuff), 0);
+									printf("Introduce el número de tarjeta: ");
+									fflush(stdout);
+									fflush(stdin);
+									gets(opcionCompra);
+									sprintf(sendBuff,"%c",opcionCompra);
+									send(s, sendBuff, sizeof(sendBuff), 0);
+									//filtrarCocheCompra(lCoches);
 									printf(
 											"----------------------------------------------------------------------------------"
 													"-------------------------------------------------------\n");
