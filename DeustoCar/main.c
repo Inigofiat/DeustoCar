@@ -20,6 +20,15 @@ int main() {
 	int pos;
 	char opcion, opcionCliente1, opcionCliente2, opcionCliente3;
 	bool sesionActiva = true;
+	char anio[5];
+	int numC;
+	Coche coche;
+	char *marca;
+	char cvmin[10], cvmax[10];
+	char *precioMin;
+	char *precioMax;
+	char matricula[10], tarjeta[10];
+	char opcionCompra[5];
 
 	WSADATA wsaData;
 	SOCKET s;
@@ -130,35 +139,24 @@ int main() {
 										case '1':
 											recv(s, recvBuff, sizeof(recvBuff),
 													0);
-											int numC;
-											Coche coche;
 											sscanf(recvBuff, "%d", numC);
 											for (int i = 0; i < numC; i++) {
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.anio, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.marca, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.modelo, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.precio, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.cv, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.estado, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.color, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.matricula, "%s",
-														s);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.anio, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.marca, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.modelo, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.precio, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.cv, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.estado, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.color, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.matricula, "%s",recvBuff);
 											}
 											visualizarListaCoches(lCoches);
 											printf(
@@ -167,53 +165,32 @@ int main() {
 											fflush(stdout);
 											break;
 										case '2':
-											char anio[5];
 											printf(
 													"Introduce el año del coche: ");
 											fflush(stdout);
 											fflush(stdin);
 											gets(anio);
 											sprintf(sendBuff, "%s", anio);
-											send(s, sendBuff, sizeof(sendBuff),
-													0);
-
-											recv(s, recvBuff, sizeof(recvBuff),
-													0);
-											int numC;
-											Coche coche;
+											send(s, sendBuff, sizeof(sendBuff),0);
+											recv(s, recvBuff, sizeof(recvBuff),0);
 											sscanf(recvBuff, "%d", &numC);
 											for (int i = 0; i < numC; ++i) {
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.anio, "%s",
-														recvBuff);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.marca, "%s",
-														recvBuff);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.modelo, "%s",
-														recvBuff);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.precio, "%s",
-														recvBuff);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.cv, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.estado, "%s",
-														recvBuff);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.color, "%s",
-														recvBuff);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.matricula, "%s",
-														recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.anio, "%s",recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.marca, "%s",recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.modelo, "%s",recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.precio, "%s",recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.cv, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.estado, "%s",recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.color, "%s",recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.matricula, "%s",recvBuff);
 												mostrarCoche(coche); //DUDA
 
 											}
@@ -223,47 +200,32 @@ int main() {
 											fflush(stdout);
 											break;
 										case '3':
-											char *marca;
 											printf(
 													"Introduce la marca del coche: ");
 											fflush(stdout);
 											fflush(stdin);
 											gets(marca);
-											sprintf(sendBuff, "%c", marca);
-											send(s, sendBuff, sizeof(sendBuff),
-													0);
-
-											recv(s, recvBuff, sizeof(recvBuff),
-													0);
-											int numC;
-											Coche coche;
+											sprintf(sendBuff, "%s", marca);
+											send(s, sendBuff, sizeof(sendBuff),0);
+											recv(s, recvBuff, sizeof(recvBuff),0);
 											sscanf(recvBuff, "%d", &numC);
 											for (int i = 0; i < numC; ++i) {
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.anio, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.marca, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.modelo, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.precio, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.cv, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.estado, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.color, "%s", s);
-												recv(s, recvBuff,
-														sizeof(recvBuff), 0);
-												sprintf(coche.matricula, "%s",
-														s);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.anio, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.marca, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.modelo, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.precio, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.cv, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.estado, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.color, "%s", recvBuff);
+												recv(s, recvBuff,sizeof(recvBuff), 0);
+												sprintf(coche.matricula, "%s",recvBuff);
 												mostrarCoche(coche); //DUDA
 											}
 											printf(
@@ -272,7 +234,6 @@ int main() {
 											fflush(stdout);
 											break;
 										case '4':
-											char cvmin[10], cvmax[10];
 											printf(
 													"Introduce el valor mínimo de potencia (CV) del coche: ");
 											fflush(stdout);
@@ -289,8 +250,6 @@ int main() {
 											sprintf(sendBuff, "%s", cvmax);
 											send(s, sendBuff, sizeof(sendBuff),
 													0);
-											int numC;
-											Coche coche;
 											recv(s, recvBuff, sizeof(recvBuff),
 													0);
 
@@ -337,14 +296,12 @@ int main() {
 											fflush(stdout);
 											break;
 										case '5':
-											char *precioMin;
-											char *precioMax;
 											printf(
 													"Introduce el valor mínimo de precio del coche: ");
 											fflush(stdout);
 											fflush(stdin);
 											gets(precioMin);
-											sprintf(sendBuff, "%c", precioMin);
+											sprintf(sendBuff, "%s", precioMin);
 											send(s, sendBuff, sizeof(sendBuff),
 													0);
 											printf(
@@ -352,7 +309,7 @@ int main() {
 											fflush(stdout);
 											fflush(stdin);
 											gets(precioMax);
-											sprintf(sendBuff, "%c", precioMax);
+											sprintf(sendBuff, "%s", precioMax);
 											send(s, sendBuff, sizeof(sendBuff),
 													0);
 											//filtrarPorPrecio(lCoches);
@@ -379,8 +336,6 @@ int main() {
 									} while (opcionCliente3 != '0');
 									break;
 								case '3':
-									char matricula[10], tarjeta[10];
-									char opcionCompra[5];
 									printf(
 											"Introduce la matrícula del coche: ");
 									fflush(stdout);
@@ -406,7 +361,6 @@ int main() {
 										gets(tarjeta);
 										sprintf(sendBuff, "%s", tarjeta);
 										send(s, sendBuff, sizeof(sendBuff), 0);
-										char opcionCompra[10];
 										printf("¿Desea comprar este coche? (Si/No): ");
 										fflush(stdout);
 										fflush(stdin);
@@ -414,7 +368,7 @@ int main() {
 										sprintf(sendBuff, "%s", opcionCompra);
 										send(s, sendBuff, sizeof(sendBuff), 0);
 										recv(s, recvBuff, sizeof(recvBuff), 0);
-										printf("%s",s);
+										printf("%s",recvBuff);
 									}
 									printf(
 											"----------------------------------------------------------------------------------"
