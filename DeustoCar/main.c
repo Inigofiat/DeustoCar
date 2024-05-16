@@ -17,18 +17,11 @@ int main() {
 	ListaClientes lClientes;
 	ListaCoches lCoches;
 	Cliente cliente, clienteIniciado;
-	int pos;
+	int pos, correcta, numC, nuevoCliente;
 	char opcion, opcionCliente1, opcionCliente2, opcionCliente3;
 	bool sesionActiva = true;
-	char anio[5];
-	int numC;
 	Coche coche;
-	char *marca;
-	char cvmin[10], cvmax[10];
-	char *precioMin;
-	char *precioMax;
-	char matricula[10], tarjeta[10];
-	char opcionCompra[5];
+	char anio[5],marca[10], cvmin[10], cvmax[10],precioMin[10],precioMax[10],matricula[10], tarjeta[10],opcionCompra[5], color[20], estado[20];
 
 	WSADATA wsaData;
 	SOCKET s;
@@ -107,7 +100,6 @@ int main() {
 					} else {
 						//if (contraseniaCorrecta(lClientes.aClientes[pos].contrasenia,cliente.contrasenia)) {
 						recv(s, recvBuff, sizeof(recvBuff), 0);
-						int correcta;
 						sscanf(recvBuff, "%d", &correcta);
 						if (correcta == 1) {
 							printf("Inicio sesión exitoso\n");
@@ -139,7 +131,7 @@ int main() {
 										case '1':
 											recv(s, recvBuff, sizeof(recvBuff),
 													0);
-											sscanf(recvBuff, "%d", numC);
+											sscanf(recvBuff, "%d", &numC);
 											for (int i = 0; i < numC; i++) {
 												recv(s, recvBuff,sizeof(recvBuff), 0);
 												sprintf(coche.anio, "%s", recvBuff);
@@ -226,7 +218,7 @@ int main() {
 												sprintf(coche.color, "%s", recvBuff);
 												recv(s, recvBuff,sizeof(recvBuff), 0);
 												sprintf(coche.matricula, "%s",recvBuff);
-												mostrarCoche(coche); //DUDA
+												mostrarCoche(coche);
 											}
 											printf(
 													"----------------------------------------------------------------------------------"
@@ -296,37 +288,154 @@ int main() {
 											fflush(stdout);
 											break;
 										case '5':
-											printf(
-													"Introduce el valor mínimo de precio del coche: ");
+											printf("Introduce el valor mínimo de precio del coche: ");
 											fflush(stdout);
 											fflush(stdin);
 											gets(precioMin);
 											sprintf(sendBuff, "%s", precioMin);
-											send(s, sendBuff, sizeof(sendBuff),
-													0);
-											printf(
-													"Introduce el valor máximo de precio del coche: ");
+											send(s, sendBuff, sizeof(sendBuff),0);
+											printf("Introduce el valor máximo de precio del coche: ");
 											fflush(stdout);
 											fflush(stdin);
 											gets(precioMax);
 											sprintf(sendBuff, "%s", precioMax);
 											send(s, sendBuff, sizeof(sendBuff),
 													0);
-											//filtrarPorPrecio(lCoches);
+											recv(s, recvBuff, sizeof(recvBuff),
+													0);
+											sscanf(recvBuff, "%d", &numC);
+											for (int i = 0; i < numC; ++i) {
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.anio, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.marca, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.modelo, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.precio, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.cv, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.estado, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.color, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.matricula, "%s",recvBuff);
+												mostrarCoche(coche);
+											}
+
 											printf(
 													"----------------------------------------------------------------------------------"
 															"-------------------------------------------------------\n");
 											fflush(stdout);
 											break;
 										case '6':
-											filtrarPorColor(lCoches);
+											printf("Introduce el color del coche: ");
+											fflush(stdout);
+											fflush(stdin);
+											gets(color);
+											sprintf(sendBuff, "%s", color);
+											send(s, sendBuff, sizeof(sendBuff),0);
+											recv(s, recvBuff, sizeof(recvBuff),0);
+											sscanf(recvBuff, "%d", &numC);
+											for (int i = 0; i < numC; ++i) {
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.anio, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.marca, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.modelo, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.precio, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.cv, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.estado, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.color, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.matricula, "%s",recvBuff);
+												mostrarCoche(coche);
+											}
 											printf(
 													"----------------------------------------------------------------------------------"
 															"-------------------------------------------------------\n");
 											fflush(stdout);
 											break;
 										case '7':
-											filtrarPorEstado(lCoches);
+										    printf("Los estados disponibles son: Nuevo o Seminuevo\n");
+										    printf("Introduce el color del coche: ");
+										    fflush(stdout);
+										    fflush(stdin);
+										    gets(estado);
+											sprintf(sendBuff, "%s", estado);
+											send(s, sendBuff, sizeof(sendBuff),0);
+											recv(s, recvBuff, sizeof(recvBuff),0);
+											sscanf(recvBuff, "%d", &numC);
+											for (int i = 0; i < numC; ++i) {
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.anio, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.marca, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.modelo, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.precio, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.cv, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.estado, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.color, "%s",
+														recvBuff);
+												recv(s, recvBuff,
+														sizeof(recvBuff), 0);
+												sprintf(coche.matricula, "%s",recvBuff);
+												mostrarCoche(coche);
+											}
 											printf(
 													"----------------------------------------------------------------------------------"
 															"-------------------------------------------------------\n");
@@ -346,15 +455,13 @@ int main() {
 									//filtrarCocheCompra(lCoches);
 									recv(s, recvBuff, sizeof(recvBuff), 0);
 									if (strcmp(recvBuff, "No encontrado")
-											== 0) {
-										printf(
-												"No existe un coche de esas características\n");
+										== 0) {
+										printf("No existe un coche de esas características\n");
 									} else {
-										Coche c;
-										sprintf(c.anio, "%s", recvBuff);
+										sprintf(coche.anio, "%s", recvBuff);
 										recv(s, recvBuff, sizeof(recvBuff), 0);
-										sprintf(c.matricula, "%s", recvBuff);
-										mostrarCoche(c);
+										sprintf(coche.matricula, "%s", recvBuff);
+										mostrarCoche(coche);
 										printf("Introduce el número de tarjeta: ");
 										fflush(stdout);
 										fflush(stdin);
@@ -384,22 +491,57 @@ int main() {
 					break;
 				case '2':
 					cliente = pedirCliente();
-					pos = buscarCliente(lClientes, cliente.email);
-					if (pos != -1) {
+					sprintf(sendBuff, "%s", cliente.nombre);
+					send(s, sendBuff, sizeof(sendBuff),0);
+					sprintf(sendBuff, "%s", cliente.apellido);
+					send(s, sendBuff, sizeof(sendBuff),0);
+					sprintf(sendBuff, "%s", cliente.dni);
+					send(s, sendBuff, sizeof(sendBuff),0);
+					sprintf(sendBuff, "%s", cliente.telefono);
+					send(s, sendBuff, sizeof(sendBuff),0);
+					sprintf(sendBuff, "%s", cliente.email);
+					send(s, sendBuff, sizeof(sendBuff),0);
+					sprintf(sendBuff, "%s", cliente.direccion);
+					send(s, sendBuff, sizeof(sendBuff),0);
+					sprintf(sendBuff, "%s", cliente.contrasenia);
+					send(s, sendBuff, sizeof(sendBuff),0);
+
+					recv(s, recvBuff, sizeof(recvBuff), 0);
+					if(strcmp(recvBuff,"Lo sentimos! Ese email ya existe")==0){
 						printf("Lo sentimos! Ese email ya existe\n");
-						printf(
-								"----------------------------------------------------------------------------------"
-										"-------------------------------------------------------\n");
-						fflush(stdout);
-					} else {
-						aniadirCliente(&lClientes, cliente);
-						aniadirClienteAlFinalDelFichero(cliente,
-						NOMBFICHCLIENTES);
-						printf(
-								"----------------------------------------------------------------------------------"
-										"-------------------------------------------------------\n");
-						fflush(stdout);
+					}else{
+						recv(s, recvBuff, sizeof(recvBuff), 0);
+						sscanf(recvBuff, "%d", &nuevoCliente);
+						if(nuevoCliente==1){
+							recv(s,recvBuff, sizeof(recvBuff),0);
+							if(strcmp(recvBuff,"El usuario ha sido registrado con éxito")==0){
+								printf("El usuario ha sido registrado con éxito\n");
+							}
+						}else{
+							recv(s,recvBuff, sizeof(recvBuff),0);
+							if(strcmp(recvBuff, "El usuario no ha podido ser registrado")==0){
+								printf("El usuario no ha podido ser registrado");
+							}
+						}
+
 					}
+
+					//pos = buscarCliente(lClientes, cliente.email);
+//					if (pos != -1) {
+//						printf("Lo sentimos! Ese email ya existe\n");
+//						printf(
+//								"----------------------------------------------------------------------------------"
+//										"-------------------------------------------------------\n");
+//						fflush(stdout);
+//					} else {
+//						aniadirCliente(&lClientes, cliente);
+//						aniadirClienteAlFinalDelFichero(cliente,
+//						NOMBFICHCLIENTES);
+//						printf(
+//								"----------------------------------------------------------------------------------"
+//										"-------------------------------------------------------\n");
+//						fflush(stdout);
+//					}
 					break;
 				default:
 					break;
