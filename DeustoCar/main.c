@@ -394,7 +394,7 @@ int main() {
 											break;
 										case '7':
 										    printf("Los estados disponibles son: Nuevo o Seminuevo\n");
-										    printf("Introduce el color del coche: ");
+										    printf("Introduce el estado del coche: ");
 										    fflush(stdout);
 										    fflush(stdin);
 										    gets(estado);
